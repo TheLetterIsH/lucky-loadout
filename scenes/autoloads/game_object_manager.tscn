@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cefn0fa0ay560"]
+
+[ext_resource type="Script" path="res://scenes/autoloads/game_object_manager.gd" id="1_vvhtx"]
+
+[node name="GameObjectManager" type="Node"]
+script = ExtResource("1_vvhtx")
