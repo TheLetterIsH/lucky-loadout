@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvx67s6pg0myn"]
+[gd_scene load_steps=6 format=3 uid="uid://dvx67s6pg0myn"]
 
 [ext_resource type="Texture2D" uid="uid://dh3twwof4lm2n" path="res://scenes/game objects/player/player.png" id="1_keisc"]
 [ext_resource type="Script" path="res://scenes/game objects/player/player.gd" id="1_konj5"]
 [ext_resource type="Script" path="res://scenes/game objects/player/player_camera.gd" id="2_6dhfk"]
+[ext_resource type="PackedScene" uid="uid://b8om3mtsoylfl" path="res://scenes/game objects/weapon/weapon.tscn" id="3_8cfdr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ja7m"]
+radius = 8.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -13,13 +15,15 @@ script = ExtResource("1_konj5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
-limit_left = -160
-limit_top = -160
-limit_right = 960
-limit_bottom = 960
+limit_left = -64
+limit_top = -64
+limit_right = 704
+limit_bottom = 704
 position_smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource("2_6dhfk")
+
+[node name="Weapon" parent="." instance=ExtResource("3_8cfdr")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_keisc")

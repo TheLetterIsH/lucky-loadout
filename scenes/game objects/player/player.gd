@@ -3,9 +3,13 @@ class_name Player
 
 @export_category("Player")
 @export_group("Movement")
-@export var speed: float = 250
+@export var speed: float = 200
 @export var friction: float = 0.15
 @export var acceleration: float = 0.15
+
+@onready var camera_2d: Camera2D = $Camera2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var weapon: Weapon = $Weapon
 
 
 func _ready() -> void:

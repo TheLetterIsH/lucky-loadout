@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dckww7fw64isc"]
+
+[ext_resource type="Script" path="res://scenes/game objects/entities/_base/entity_base.gd" id="1_7iim5"]
+[ext_resource type="PackedScene" uid="uid://c46d0yoet3mxp" path="res://scenes/effects/entity death effect/entity_death_effect.tscn" id="2_qdntb"]
+
+[node name="EntityBase" type="Area2D"]
+script = ExtResource("1_7iim5")
+death_effect_scene = ExtResource("2_qdntb")

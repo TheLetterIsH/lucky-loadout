@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cifvou84fs2u0"]
+
+[ext_resource type="PackedScene" uid="uid://b1ht4d8j2wdk4" path="res://scenes/game objects/entities/linear/entity_linear.tscn" id="1_crh45"]
+[ext_resource type="Texture2D" uid="uid://bn8w03pr3vq7v" path="res://graphics/entities/circle/circle_outer.png" id="2_hrwjv"]
+[ext_resource type="Texture2D" uid="uid://y0vjnw826h2i" path="res://graphics/entities/circle/circle_inner.png" id="3_u03no"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oap30"]
+radius = 9.0
+
+[sub_resource type="Animation" id="Animation_niwwc"]
+resource_name = "spawn"
+length = 0.04
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04),
+"transitions": PackedFloat32Array(3, 3),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gw1fe"]
+_data = {
+"spawn": SubResource("Animation_niwwc")
+}
+
+[node name="EntityLinearCircle" instance=ExtResource("1_crh45")]
+
+[node name="OuterSprite2D" parent="." index="0"]
+texture = ExtResource("2_hrwjv")
+
+[node name="InnerSprite2D" parent="." index="1"]
+texture = ExtResource("3_u03no")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_oap30")
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_gw1fe")
+}
+autoplay = "spawn"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ht4d8j2wdk4"]
+
+[ext_resource type="Script" path="res://scenes/game objects/entities/linear/entity_linear.gd" id="1_hbih5"]
+[ext_resource type="PackedScene" uid="uid://c46d0yoet3mxp" path="res://scenes/effects/entity death effect/entity_death_effect.tscn" id="2_f020b"]
+
+[node name="EntityLinear" type="Area2D"]
+script = ExtResource("1_hbih5")
+death_effect_scene = ExtResource("2_f020b")
+
+[node name="OuterSprite2D" type="Sprite2D" parent="."]
+
+[node name="InnerSprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://ej8pnbr5mu5b"]
+
+[ext_resource type="PackedScene" uid="uid://b1ht4d8j2wdk4" path="res://scenes/game objects/entities/linear/entity_linear.tscn" id="1_62wid"]
+[ext_resource type="Texture2D" uid="uid://dxf2m3d2my4cy" path="res://graphics/entities/slash/slash_outer.png" id="2_8cem6"]
+[ext_resource type="Texture2D" uid="uid://cen5qwl5rxpr6" path="res://graphics/entities/slash/slash_inner.png" id="3_qieoy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nr6j7"]
+radius = 9.0
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_o5d7i"]
+resource_name = "spawn"
+length = 0.04
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04),
+"transitions": PackedFloat32Array(3, 3),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pei0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmke3"]
+_data = {
+"RESET": SubResource("Animation_pei0p"),
+"spawn": SubResource("Animation_o5d7i")
+}
+
+[node name="EntityLinearSlash" instance=ExtResource("1_62wid")]
+
+[node name="OuterSprite2D" parent="." index="0"]
+texture = ExtResource("2_8cem6")
+
+[node name="InnerSprite2D" parent="." index="1"]
+texture = ExtResource("3_qieoy")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CapsuleShape2D_nr6j7")
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_jmke3")
+}
+autoplay = "spawn"
