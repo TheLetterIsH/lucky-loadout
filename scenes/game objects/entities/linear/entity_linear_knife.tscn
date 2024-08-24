@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjikyk3xlh821"]
+
+[ext_resource type="PackedScene" uid="uid://b1ht4d8j2wdk4" path="res://scenes/game objects/entities/linear/entity_linear.tscn" id="1_3j0sh"]
+[ext_resource type="Texture2D" uid="uid://bbcvmoso1x87g" path="res://graphics/entities/knife/knife.png" id="2_lsgwn"]
+
+[node name="EntityLinearKnife" instance=ExtResource("1_3j0sh")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_lsgwn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-7, 3, 5, 3, 7, -1, 7, -3, -5, -3, -7, 1)

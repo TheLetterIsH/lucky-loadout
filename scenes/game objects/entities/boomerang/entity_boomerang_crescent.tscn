@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://6uny3tpjwm87"]
+
+[ext_resource type="PackedScene" uid="uid://7y63t1jg2mel" path="res://scenes/game objects/entities/boomerang/entity_boomerang.tscn" id="1_ssb50"]
+[ext_resource type="Texture2D" uid="uid://c1xusx1p8j1qw" path="res://graphics/entities/crescent/crescent.png" id="2_0fje1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6omcm"]
+radius = 7.5
+
+[node name="EntityBoomerangCrescent" instance=ExtResource("1_ssb50")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_0fje1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_6omcm")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv55ffkm4w8mh"]
+
+[ext_resource type="PackedScene" uid="uid://b1ht4d8j2wdk4" path="res://scenes/game objects/entities/linear/entity_linear.tscn" id="1_36vsd"]
+[ext_resource type="Texture2D" uid="uid://n5cfhyjkn8yv" path="res://graphics/entities/slam/slam.png" id="2_ga2il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8fcm"]
+size = Vector2(10, 24)
+
+[node name="EntityLinearSlam" instance=ExtResource("1_36vsd")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ga2il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_f8fcm")

@@ -1,15 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvx67s6pg0myn"]
+[gd_scene load_steps=8 format=3 uid="uid://dvx67s6pg0myn"]
 
 [ext_resource type="Texture2D" uid="uid://dh3twwof4lm2n" path="res://scenes/game objects/player/player.png" id="1_keisc"]
 [ext_resource type="Script" path="res://scenes/game objects/player/player.gd" id="1_konj5"]
 [ext_resource type="Script" path="res://scenes/game objects/player/player_camera.gd" id="2_6dhfk"]
 [ext_resource type="PackedScene" uid="uid://b8om3mtsoylfl" path="res://scenes/game objects/weapon/weapon.tscn" id="3_8cfdr"]
+[ext_resource type="Shader" path="res://resources/shaders/squash.gdshader" id="4_j1lgv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yghy"]
+shader = ExtResource("4_j1lgv")
+shader_parameter/squash_direction = Vector2(0, 0)
+shader_parameter/squash_amount = 0.25
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ja7m"]
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
+collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_konj5")
 
@@ -17,8 +24,9 @@ script = ExtResource("1_konj5")
 process_callback = 0
 limit_left = -64
 limit_top = -64
-limit_right = 704
-limit_bottom = 704
+limit_right = 768
+limit_bottom = 768
+limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource("2_6dhfk")
@@ -26,6 +34,7 @@ script = ExtResource("2_6dhfk")
 [node name="Weapon" parent="." instance=ExtResource("3_8cfdr")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0yghy")
 texture = ExtResource("1_keisc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

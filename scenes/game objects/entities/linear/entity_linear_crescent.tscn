@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://br3ir8jo54hwd"]
+
+[ext_resource type="PackedScene" uid="uid://b1ht4d8j2wdk4" path="res://scenes/game objects/entities/linear/entity_linear.tscn" id="1_45ymp"]
+[ext_resource type="Texture2D" uid="uid://c1xusx1p8j1qw" path="res://graphics/entities/crescent/crescent.png" id="2_ksrd0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pycxw"]
+radius = 7.5
+
+[node name="EntityLinearCrescent" instance=ExtResource("1_45ymp")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ksrd0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_pycxw")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmxp12s8jxjmy"]
+
+[ext_resource type="Script" path="res://scenes/game objects/enemies/dummy/enemy_dummy.gd" id="1_5ivv5"]
+[ext_resource type="Texture2D" uid="uid://x4rxnfkjfywe" path="res://scenes/game objects/enemies/dummy/enemy_dummy.png" id="2_g8kj1"]
+[ext_resource type="Shader" path="res://resources/shaders/hit_flash_and_squash.gdshader" id="2_nn6ew"]
+[ext_resource type="Texture2D" uid="uid://di4rjx8ohugcq" path="res://graphics/bars/health_bar_background.png" id="4_iyjic"]
+[ext_resource type="Texture2D" uid="uid://8hfr4s20uc1h" path="res://graphics/bars/health_bar_progress.png" id="5_0lpb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7od7y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5434e"]
+resource_local_to_scene = true
+shader = ExtResource("2_nn6ew")
+shader_parameter/squash_direction = Vector2(0, 0)
+shader_parameter/squash_amount = 0.35
+shader_parameter/flash_color = Color(0.878431, 0.878431, 0.878431, 1)
+shader_parameter/flash_value = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i85qy"]
+radius = 9.0
+
+[node name="EnemyDummy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 11
+motion_mode = 1
+script = ExtResource("1_5ivv5")
+max_health = 20.0
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 36
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_7od7y")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5434e")
+texture = ExtResource("2_g8kj1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i85qy")
+
+[node name="HealthBarContainer" type="Node2D" parent="."]
+top_level = true
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthBarContainer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -13.0
+offset_right = 8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 65.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_iyjic")
+texture_progress = ExtResource("5_0lpb6")
+tint_progress = Color(0.886275, 0.145098, 0.180392, 1)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../HealthBarContainer")
+update_rotation = false
+
+[node name="HideHealthBarTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="HideHealthBarTimer" to="." method="_on_hide_health_bar_timer_timeout"]

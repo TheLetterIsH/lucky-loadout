@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://db5gghyp2r351"]
+
+[ext_resource type="PackedScene" uid="uid://b1ht4d8j2wdk4" path="res://scenes/game objects/entities/linear/entity_linear.tscn" id="1_b0ke3"]
+[ext_resource type="Texture2D" uid="uid://l7ts2s3fcs3g" path="res://graphics/entities/square/square.png" id="2_burlf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hc1e"]
+size = Vector2(10, 10)
+
+[node name="EntityLinearSquare" instance=ExtResource("1_b0ke3")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_burlf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_6hc1e")

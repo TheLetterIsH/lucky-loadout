@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://c5d1ngqos4jis"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_2814a"]
+[ext_resource type="PackedScene" uid="uid://bupo64shm0ej1" path="res://scenes/game objects/entities/linear/entity_linear_stab.tscn" id="1_kx46b"]
+
+[resource]
+script = ExtResource("1_2814a")
+id = 2
+identifier = "02_butter_knife"
+name = "butter knife"
+description = ""
+cost = 1
+tier = 1
+type = "dagger"
+color = Color(1, 0.729412, 0.0509804, 1)
+rate = 1.85
+pattern = "basic"
+entity_scene = ExtResource("1_kx46b")
+number_of_entities = 1
+spawn_interval = 0.0
+spread = 0.0
+accuracy_variation = 1.5
+range = 13.0
+range_variation = 0.5
+speed = 3.0
+min_damage = 0.0
+max_damage = 0.0
+crit_chance = 0.0
+crit_mult = 0.0
+can_do_damage_over_time = false
+damage_over_time = 0.0
+damage_over_time_lifetime = 0.0
+is_piercing = false
+is_chaining = false
+chaining_amount = 0
+is_homing = false
+homing_strength = 0.0
+spawn_chance = 0.0
+spawn_size_mult = 0.0
+can_rotate = false
+rotation_speed = 0.0
+has_secondary = false
+secondary_interval = 0
+secondary_pattern = ""
+secondary_number_of_entities = 0
+secondary_spawn_interval = 0.0
+secondary_spread = 0.0
+secondary_accuracy_variation = 0.0
+secondary_range = 0.0
+secondary_range_variation = 0.0
+secondary_speed = 0.0
+secondary_min_damage = 0.0
+secondary_max_damage = 0.0
+secondary_crit_chance = 0.0
+secondary_crit_mult = 0.0
+secondary_can_do_damage_over_time = false
+secondary_damage_over_time = 0.0
+secondary_damage_over_time_lifetime = 0.0
+secondary_is_piercing = false
+secondary_is_chaining = false
+secondary_chaining_amount = 0
+secondary_is_homing = false
+secondary_homing_strength = 0.0
+secondary_spawn_chance = 0.0
+secondary_spawn_size_mult = 0.0
+secondary_can_rotate = false
+secondary_rotation_speed = 0.0

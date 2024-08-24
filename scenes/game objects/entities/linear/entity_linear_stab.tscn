@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bupo64shm0ej1"]
+
+[ext_resource type="PackedScene" uid="uid://b1ht4d8j2wdk4" path="res://scenes/game objects/entities/linear/entity_linear.tscn" id="1_mibvu"]
+[ext_resource type="Texture2D" uid="uid://bc1typ7lro1n1" path="res://graphics/entities/stab/stab.png" id="2_3w7rp"]
+
+[node name="EntityLinearStab" instance=ExtResource("1_mibvu")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_3w7rp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-8, -8, -6, -8, 8, -1, 8, 1, -6, 8, -8, 8, -8, 6, -2, 0, -8, -6)

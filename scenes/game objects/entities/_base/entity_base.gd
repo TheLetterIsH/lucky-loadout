@@ -1,7 +1,7 @@
 extends Area2D
 class_name EntityBase
 
-@export var death_effect_scene: PackedScene
+@export var particle_effect_scene: PackedScene
 
 
 # base

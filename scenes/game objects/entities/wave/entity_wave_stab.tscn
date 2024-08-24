@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://db2n4wdhqxjma"]
+
+[ext_resource type="PackedScene" uid="uid://b7lmplq1whxww" path="res://scenes/game objects/entities/wave/entity_wave.tscn" id="1_1eyff"]
+[ext_resource type="Texture2D" uid="uid://bc1typ7lro1n1" path="res://graphics/entities/stab/stab.png" id="2_e0iav"]
+
+[node name="EntityWaveStab" instance=ExtResource("1_1eyff")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_e0iav")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-8, -8, -6, -8, 8, -1, 8, 1, -6, 8, -8, 8, -8, 6, -2, 0, -8, -6)

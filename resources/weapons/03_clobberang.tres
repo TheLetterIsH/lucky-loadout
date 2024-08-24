@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://bsypqt1eiisey"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_aarbb"]
+[ext_resource type="PackedScene" uid="uid://dxisc8nthb1gc" path="res://scenes/game objects/entities/boomerang/entity_boomerang_square.tscn" id="1_qh3yc"]
+
+[resource]
+script = ExtResource("1_aarbb")
+id = 3
+identifier = "03_clobberang"
+name = "clobberang"
+description = ""
+cost = 2
+tier = 2
+type = "boomerang"
+color = Color(0.988235, 0.458824, 0.133333, 1)
+rate = 1.5
+pattern = "basic"
+entity_scene = ExtResource("1_qh3yc")
+number_of_entities = 1
+spawn_interval = 0.0
+spread = 0.0
+accuracy_variation = 5.0
+range = 8.0
+range_variation = 0.0
+speed = 4.3
+min_damage = 1.0
+max_damage = 2.0
+crit_chance = 0.05
+crit_mult = 1.5
+can_do_damage_over_time = false
+damage_over_time = 0.0
+damage_over_time_lifetime = 0.0
+is_piercing = false
+is_chaining = false
+chaining_amount = 0
+is_homing = false
+homing_strength = 0.0
+spawn_chance = 0.0
+spawn_size_mult = 0.0
+can_rotate = true
+rotation_speed = 6.5
+has_secondary = false
+secondary_interval = 0
+secondary_pattern = ""
+secondary_number_of_entities = 0
+secondary_spawn_interval = 0.0
+secondary_spread = 0.0
+secondary_accuracy_variation = 0.0
+secondary_range = 0.0
+secondary_range_variation = 0.0
+secondary_speed = 0.0
+secondary_min_damage = 0.0
+secondary_max_damage = 0.0
+secondary_crit_chance = 0.0
+secondary_crit_mult = 0.0
+secondary_can_do_damage_over_time = false
+secondary_damage_over_time = 0.0
+secondary_damage_over_time_lifetime = 0.0
+secondary_is_piercing = false
+secondary_is_chaining = false
+secondary_chaining_amount = 0
+secondary_is_homing = false
+secondary_homing_strength = 0.0
+secondary_spawn_chance = 0.0
+secondary_spawn_size_mult = 0.0
+secondary_can_rotate = false
+secondary_rotation_speed = 0.0

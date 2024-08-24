@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bpegj8b0tfg0f"]
+
+[ext_resource type="FontFile" uid="uid://m2qk4a0ek4p1" path="res://resources/fonts/retro-pixel-thick.ttf" id="1_uolc4"]
+
+[resource]
+default_font = ExtResource("1_uolc4")
+default_font_size = 16

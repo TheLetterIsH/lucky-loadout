@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7lmplq1whxww"]
+
+[ext_resource type="Script" path="res://scenes/game objects/entities/wave/entity_wave.gd" id="1_l7a03"]
+[ext_resource type="PackedScene" uid="uid://b5mfjfrj4ocdg" path="res://scenes/effects/particle effect/particle_effect.tscn" id="2_kucy7"]
+
+[sub_resource type="Animation" id="Animation_r5f0e"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_1wiu1"]
+resource_name = "spawn"
+length = 0.05
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4yagj"]
+_data = {
+"RESET": SubResource("Animation_r5f0e"),
+"spawn": SubResource("Animation_1wiu1")
+}
+
+[node name="EntityWave" type="Area2D" groups=["entity"]]
+collision_layer = 32
+collision_mask = 17
+script = ExtResource("1_l7a03")
+particle_effect_scene = ExtResource("2_kucy7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4yagj")
+}
+autoplay = "spawn"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

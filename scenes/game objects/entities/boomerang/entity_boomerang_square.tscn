@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxisc8nthb1gc"]
+
+[ext_resource type="PackedScene" uid="uid://7y63t1jg2mel" path="res://scenes/game objects/entities/boomerang/entity_boomerang.tscn" id="1_cb77y"]
+[ext_resource type="Texture2D" uid="uid://l7ts2s3fcs3g" path="res://graphics/entities/square/square.png" id="2_7x0fe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xbrj"]
+size = Vector2(10, 10)
+
+[node name="EntityBoomerangSquare" instance=ExtResource("1_cb77y")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_7x0fe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_6xbrj")

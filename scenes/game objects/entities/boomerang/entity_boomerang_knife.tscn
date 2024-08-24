@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwxw4t433b3uk"]
+
+[ext_resource type="PackedScene" uid="uid://7y63t1jg2mel" path="res://scenes/game objects/entities/boomerang/entity_boomerang.tscn" id="1_ftl2h"]
+[ext_resource type="Texture2D" uid="uid://bbcvmoso1x87g" path="res://graphics/entities/knife/knife.png" id="2_xnjln"]
+
+[node name="EntityBoomerangKnife" instance=ExtResource("1_ftl2h")]
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_xnjln")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-7, 3, 5, 3, 7, -1, 7, -3, -5, -3, -7, 1)

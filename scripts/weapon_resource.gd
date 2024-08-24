@@ -8,14 +8,14 @@ class_name WeaponResource
 @export_multiline var description: String
 @export var cost: int
 @export var tier: int
-@export_enum("sword", "dagger", "bow", "throwable", "wand", "tome") var type: String
+@export_enum("sword", "dagger", "axe", "bow", "throwable", "boomerang", "wand", "tome") var type: String
 @export var color: Color
 
 @export_category("Attributes")
 @export var rate: float
 
 @export_group("Primary")
-@export_enum("basic", "burst", "pellet", "split", "blurt", "parallel", "away") var pattern: String
+@export_enum("basic", "burst", "pellet", "split", "blurt", "parallel") var pattern: String
 @export var entity_scene: PackedScene
 @export var number_of_entities: int # Default is 1
 @export var spawn_interval: float # Applicable for "burst", default is 0
@@ -53,7 +53,7 @@ class_name WeaponResource
 @export_group("Secondary")
 @export var has_secondary: bool
 @export var secondary_interval: int
-@export_enum("basic", "burst", "pellet", "split", "blurt", "parallel", "away") var secondary_pattern: String
+@export_enum("basic", "burst", "pellet", "split", "blurt", "parallel") var secondary_pattern: String
 @export var secondary_entity_scene: PackedScene
 @export var secondary_number_of_entities: int # Default is 1
 @export var secondary_spawn_interval: float # Applicable for "burst", default is 0

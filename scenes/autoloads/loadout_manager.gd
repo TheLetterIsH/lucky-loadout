@@ -2,11 +2,11 @@ extends Node
 
 @export var current_loadout: Array[Resource]
 @export var current_loadout_paths: Array[String]
-@export var default_weapon: Resource
 
 
 func _ready() -> void:
-	# if current_loadout save exists, then use that or use default (wooden_stick)
+	# if current loadout_paths save exists, then use that; by default the current loadout paths contain default weapon path
+	# then make the current loadout array from the current loadout paths
 	pass
 
 
@@ -21,5 +21,5 @@ func get_random_weapon_from_loadout() -> Resource:
 	if current_loadout.size() == 0:
 		return
 	
-	var weapon = current_loadout.pick_random()
+	var weapon := current_loadout.pick_random() as WeaponResource
 	return weapon

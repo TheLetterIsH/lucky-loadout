@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://clgn5d7xtbsk6"]
+
+[ext_resource type="PackedScene" uid="uid://oi3qfqc10jdc" path="res://scenes/game objects/entities/linear/entity_linear_pill.tscn" id="1_5k3ht"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_xni2q"]
+
+[resource]
+script = ExtResource("1_xni2q")
+id = 6
+identifier = "06_double_trouble"
+name = "double trouble"
+description = ""
+cost = 2
+tier = 2
+type = "throwable"
+color = Color(0.988235, 0.458824, 0.133333, 1)
+rate = 2.35
+pattern = "parallel"
+entity_scene = ExtResource("1_5k3ht")
+number_of_entities = 2
+spawn_interval = 0.0
+spread = 0.0
+accuracy_variation = 0.0
+range = 5.8
+range_variation = 1.0
+speed = 3.6
+min_damage = 1.0
+max_damage = 1.5
+crit_chance = 0.75
+crit_mult = 3.0
+can_do_damage_over_time = false
+damage_over_time = 0.0
+damage_over_time_lifetime = 0.0
+is_piercing = false
+is_chaining = false
+chaining_amount = 0
+is_homing = false
+homing_strength = 0.0
+spawn_chance = 0.0
+spawn_size_mult = 0.0
+can_rotate = false
+rotation_speed = 0.0
+has_secondary = false
+secondary_interval = 0
+secondary_pattern = ""
+secondary_number_of_entities = 0
+secondary_spawn_interval = 0.0
+secondary_spread = 0.0
+secondary_accuracy_variation = 0.0
+secondary_range = 0.0
+secondary_range_variation = 0.0
+secondary_speed = 0.0
+secondary_min_damage = 0.0
+secondary_max_damage = 0.0
+secondary_crit_chance = 0.0
+secondary_crit_mult = 0.0
+secondary_can_do_damage_over_time = false
+secondary_damage_over_time = 0.0
+secondary_damage_over_time_lifetime = 0.0
+secondary_is_piercing = false
+secondary_is_chaining = false
+secondary_chaining_amount = 0
+secondary_is_homing = false
+secondary_homing_strength = 0.0
+secondary_spawn_chance = 0.0
+secondary_spawn_size_mult = 0.0
+secondary_can_rotate = false
+secondary_rotation_speed = 0.0

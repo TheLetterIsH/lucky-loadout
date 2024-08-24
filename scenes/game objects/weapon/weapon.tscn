@@ -10,7 +10,7 @@ can_use_attack = true
 autostart = true
 
 [node name="SwitchTimer" type="Timer" parent="."]
-wait_time = 3.14
+wait_time = 6.0
 autostart = true
 
 [connection signal="timeout" from="RateTimer" to="." method="_on_rate_timer_timeout"]

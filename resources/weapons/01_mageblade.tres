@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://uedm3crgj4t2"]
+
+[ext_resource type="PackedScene" uid="uid://du0lleny2fuq5" path="res://scenes/game objects/entities/linear/entity_linear_slash.tscn" id="1_g12h6"]
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_ty8l5"]
+[ext_resource type="PackedScene" uid="uid://cpff7ylq0mdrc" path="res://scenes/game objects/entities/linear/entity_linear_circle.tscn" id="3_sl1yx"]
+
+[resource]
+script = ExtResource("1_ty8l5")
+id = 1
+identifier = "01_mageblade"
+name = "mageblade"
+description = "attack is a slash that deals"
+cost = 4
+tier = 4
+type = "sword"
+color = Color(0.211765, 0.611765, 0.886275, 1)
+rate = 2.5
+pattern = "basic"
+entity_scene = ExtResource("1_g12h6")
+number_of_entities = 1
+spawn_interval = 0.0
+spread = 0.0
+accuracy_variation = 1.5
+range = 5.0
+range_variation = 1.0
+speed = 6.0
+min_damage = 0.0
+max_damage = 0.0
+crit_chance = 0.0
+crit_mult = 0.0
+can_do_damage_over_time = false
+damage_over_time = 0.0
+damage_over_time_lifetime = 0.0
+is_piercing = false
+is_chaining = false
+chaining_amount = 0
+is_homing = false
+homing_strength = 0.0
+spawn_chance = 0.0
+spawn_size_mult = 0.0
+can_rotate = false
+rotation_speed = 0.0
+has_secondary = true
+secondary_interval = 3
+secondary_pattern = "split"
+secondary_entity_scene = ExtResource("3_sl1yx")
+secondary_number_of_entities = 3
+secondary_spawn_interval = 0.0
+secondary_spread = 30.0
+secondary_accuracy_variation = 0.0
+secondary_range = 4.0
+secondary_range_variation = 0.0
+secondary_speed = 5.0
+secondary_min_damage = 0.0
+secondary_max_damage = 0.0
+secondary_crit_chance = 0.0
+secondary_crit_mult = 0.0
+secondary_can_do_damage_over_time = false
+secondary_damage_over_time = 0.0
+secondary_damage_over_time_lifetime = 0.0
+secondary_is_piercing = false
+secondary_is_chaining = false
+secondary_chaining_amount = 0
+secondary_is_homing = false
+secondary_homing_strength = 0.0
+secondary_spawn_chance = 0.0
+secondary_spawn_size_mult = 0.0
+secondary_can_rotate = false
+secondary_rotation_speed = 0.0

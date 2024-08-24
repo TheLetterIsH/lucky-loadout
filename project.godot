@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Lucky Loadout"
+run/main_scene="res://scenes/game arena/game_arena.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.png"
 
@@ -18,8 +19,8 @@ config/icon="res://icon.png"
 
 SaveSystem="*res://addons/save_system/save_system.gd"
 GameManager="*res://scenes/autoloads/game_manager.tscn"
-ObjectManager="*res://scenes/autoloads/object_manager.tscn"
 GameEvents="*res://scenes/autoloads/game_events.tscn"
+ObjectManager="*res://scenes/autoloads/object_manager.tscn"
 LoadoutManager="*res://scenes/autoloads/loadout_manager.tscn"
 
 [debug]
@@ -30,8 +31,9 @@ gdscript/warnings/untyped_declaration=1
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/mode=3
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://graphics/cursors/cursor.png"
 mouse_cursor/custom_image_hotspot=Vector2(8, 8)
@@ -39,6 +41,22 @@ mouse_cursor/custom_image_hotspot=Vector2(8, 8)
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
+
+[gui]
+
+theme/custom="res://resources/theme/lucky_theme.tres"
+theme/custom_font="res://resources/fonts/retro-pixel-thick.ttf"
+theme/default_font_antialiasing=0
+theme/default_font_hinting=0
+theme/default_font_subpixel_positioning=0
+
+[importer_defaults]
+
+font_data_dynamic={
+"antialiasing": 0,
+"hinting": 0,
+"subpixel_positioning": 0
+}
 
 [input]
 
@@ -74,11 +92,12 @@ attack={
 
 [layer_names]
 
-2d_physics/layer_1="environment"
-2d_physics/layer_2="player_collision"
-2d_physics/layer_3="player_trigger"
-2d_physics/layer_4="enemy_collision"
-2d_physics/layer_5="enemy_trigger"
+2d_physics/layer_1="environment_collider"
+2d_physics/layer_2="player_collider"
+2d_physics/layer_3="player_area"
+2d_physics/layer_4="enemy_collider"
+2d_physics/layer_5="enemy_area"
+2d_physics/layer_6="entity_area"
 
 [rendering]
 
